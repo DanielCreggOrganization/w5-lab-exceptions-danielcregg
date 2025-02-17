@@ -57,5 +57,22 @@ public class Main {
         // Demonstrate unchecked exception (ArrayIndexOutOfBoundsException)
         int[] emptyArray = new int[0];
         System.out.println(emptyArray[0]); // This will throw the exception
+
+        // Section 6 - Test calculateGrade method
+        System.out.println("\nTesting grade calculation:");
+        try {
+            calculateGrade(150); // This will throw an exception
+        } catch (IllegalArgumentException e) {
+            System.out.println("Caught exception: " + e.getMessage());
+        }
+
+    } // End of main method
+
+    // Section 6 - DIY Exercise with throw keyword
+    public static void calculateGrade(int score) {
+        if (score < 0 || score > 100) {
+            throw new IllegalArgumentException("Invalid score");
+        }
+        System.out.println("Valid score: " + score);
     }
-}
+} // End of Main class
