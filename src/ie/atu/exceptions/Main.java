@@ -57,5 +57,5 @@ public class Main {
         // Demonstrate unchecked exception (ArrayIndexOutOfBoundsException)
         int[] emptyArray = new int[0];
         System.out.println(emptyArray[0]); // This will throw the exception
-
+    }
 }
