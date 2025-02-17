@@ -13,14 +13,24 @@ public class Main {
         }
 
         // Section 2 - DIY Exercise with ArithmeticException
+        int numerator = 10;
+        int denominator = 0;
         try {
-                        int numerator = 10;
-                                    int denominator = 0;
-                                                int result = numerator / denominator;
-                                                            System.out.println("Result: " + result);
-                                                                    } catch (ArithmeticException e) {
-                                                                                System.out.println("Caught ArithmeticException: " + e.getMessage());
-                                                                                        }
+            int result = numerator / denominator;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Caught ArithmeticException: " + e.getMessage());
+        }
+
+        // Section 3 - DIY Exercise with finally block
+        System.out.println("\nSimulating file processing:");
+        try {
+            System.out.println("Opening file...");
+            throw new Exception("Error reading file");
+        } catch (Exception e) {
+            System.out.println("Caught exception: " + e.getMessage());
+        } finally {
+            System.out.println("File processing complete.");
         }
     }
 }
