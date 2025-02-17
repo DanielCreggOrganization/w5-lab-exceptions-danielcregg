@@ -66,6 +66,41 @@ public class Main {
             System.out.println("Caught exception: " + e.getMessage());
         }
 
+        // Section 7 - Test BankAccount with InsufficientFundsException
+        System.out.println("\nTesting bank account:");
+        BankAccount account = new BankAccount(100);
+        try {
+            account.withdraw(150); // This will throw InsufficientFundsException
+        } catch (InsufficientFundsException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        // Section 8 - Error vs Exception Demo
+        System.out.println("\nError vs Exception explanation:");
+        
+        /*
+         * Why Errors are not typically caught:
+         * 
+         * 1. Errors indicate serious problems at the JVM/system level that the application
+         *    cannot reasonably recover from or handle.
+         * 
+         * 2. Examples of such Errors:
+         *    - OutOfMemoryError: JVM has exhausted available memory
+         *    - StackOverflowError: Infinite recursion or excessive method calls
+         *    - LinkageError: Class dependencies are broken
+         * 
+         * 3. Best practices:
+         *    - Let errors propagate and terminate the program
+         *    - Focus on preventing errors through proper resource management
+         *    - Use monitoring and logging to detect potential issues
+         * 
+         * Example of code that could cause an Error (DO NOT UNCOMMENT):
+         * // Infinite recursion causing StackOverflowError
+         * // public static void recurse() { recurse(); }
+         */
+        
+        System.out.println("Program continues normally.");
+
     } // End of main method
 
     // Section 6 - DIY Exercise with throw keyword
