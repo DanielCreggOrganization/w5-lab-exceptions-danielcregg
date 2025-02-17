@@ -1,5 +1,7 @@
 package ie.atu.exceptions;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Exception handling program is running!");
@@ -31,6 +33,15 @@ public class Main {
             System.out.println("Caught exception: " + e.getMessage());
         } finally {
             System.out.println("File processing complete.");
+        }
+
+        // Section 4 - DIY Exercise with try-with-resources
+        System.out.println("\nEnter a number to calculate its square:");
+        try (Scanner scanner = new Scanner(System.in)) {
+            int number = scanner.nextInt();
+            System.out.println("Square: " + (number * number));
+        } catch (Exception e) {
+            System.out.println("Error reading number: " + e.getMessage());
         }
     }
 }
