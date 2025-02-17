@@ -1,6 +1,8 @@
 package ie.atu.exceptions;
 
 import java.util.Scanner;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
@@ -43,5 +45,17 @@ public class Main {
         } catch (Exception e) {
             System.out.println("Error reading number: " + e.getMessage());
         }
-    }
+
+        // Section 5 - DIY Exercise demonstrating checked and unchecked exceptions
+        System.out.println("\nDemonstrating checked and unchecked exceptions:");
+        try {
+            FileReader reader = new FileReader("nonexistent.txt");
+        } catch (IOException e) {
+            System.out.println("Caught checked exception: " + e.getMessage());
+        }
+
+        // Demonstrate unchecked exception (ArrayIndexOutOfBoundsException)
+        int[] emptyArray = new int[0];
+        System.out.println(emptyArray[0]); // This will throw the exception
+
 }
